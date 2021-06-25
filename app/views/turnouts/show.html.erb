@@ -1,0 +1,22 @@
+<h2> You'll be Attending!</h2>
+
+<ul class = "d-flex p-2" >
+    <p class= "px-2 fw-bold">
+      <%= @event.event_name %>
+    </p>
+    <p class= "px-2">
+      <%= @event.event_location %>
+    </p>
+    <p class= "px-2">
+      <%= @event.event_date %>
+    </p>
+</ul>
+
+<h2>Attendees</h2>
+ <ol>
+    <% @event.attendees.each do |attendant|%>
+    <li>
+      <%= attendant.email %>
+    </li> 
+    <% end %>
+ </ol>

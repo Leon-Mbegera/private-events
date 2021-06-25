@@ -6,6 +6,17 @@ class TurnoutsController < ApplicationController
 
   def create
     @turnout = Turnout.new(turnout_params)
+
+    if @turnout.save
+      redirect_to @turnout
+    else
+      render :new
+    end
+  end
+
+  def show
+    @turnout = Turnout.find(params[:id])
+    @event = Event.find(@turnout.event_id)
   end
 
   private

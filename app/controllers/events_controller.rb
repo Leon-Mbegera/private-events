@@ -20,11 +20,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params: id)
+    @event = Event.find(params[:id])
   end
 
   private
     def event_params
-      params.require(:article).permit(:event_name, :event_location, :event_date)
+      params.require(:event).permit(:event_name, :event_location, :event_date)
     end
 end

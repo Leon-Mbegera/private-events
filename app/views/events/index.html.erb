@@ -2,7 +2,8 @@
 
 <ul>
   <% @events.each do |event| %>
-    <li>
+  <div>
+  <li>
       <%= event.event_name %>
     </li>
     <li>
@@ -11,5 +12,6 @@
     <li>
       <%= event.event_date %>
     </li>
+  </div>
   <% end %>
 </ul>

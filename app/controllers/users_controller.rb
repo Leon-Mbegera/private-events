@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
   def show
-    @events = User.events.all
+    @events = current_user.events.all
   end
 end

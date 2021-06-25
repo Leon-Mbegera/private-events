@@ -1,6 +1,6 @@
-class CreateAttendances < ActiveRecord::Migration[6.1]
+class CreateTurnouts < ActiveRecord::Migration[6.1]
   def change
-    create_table :attendances do |t|
+    create_table :turnouts do |t|
       t.integer :attendee_id
       t.integer :event_id
 

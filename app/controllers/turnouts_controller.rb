@@ -1,0 +1,2 @@
+class TurnoutsController < ApplicationController
+end

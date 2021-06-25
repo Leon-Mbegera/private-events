@@ -1,0 +1,11 @@
+<br><br>
+<h1>Upcoming events</h1>
+<%= form_with model: @event, method: :POST do |form|%>
+  <%= form.label :name, "Event name:" %> <br>
+  <%= form.text_field :name%> <br><br>
+  <%= form.label :location, "Venue:" %> <br>
+  <%= form.text_field :location%><br>
+  <%= form.label :date, "Date:" %> <br>
+  <%= form.datetime_field :date%><br>
+  <%= form.submit "Set event"%>
+<% end %>

@@ -1,4 +1,4 @@
-<h1>Our Events</h1>
+<h1>New Events</h1>
 
 <ul>
   <% @events.each do |event| %>
@@ -15,3 +15,4 @@
   </div>
   <% end %>
 </ul>
+<%= link_to "New Events", new_event_path %>

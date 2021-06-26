@@ -13,3 +13,12 @@
     </li>
   <% end %>
 </ul>
+
+<h2>Attended events</h2>
+ <ol>
+    <% current_user.attended_events.each do |event| %>
+    <li>
+      <%= event.event_name %>
+    </li> 
+    <% end %>
+ </ol>

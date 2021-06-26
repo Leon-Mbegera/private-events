@@ -1,5 +1,4 @@
 class TurnoutsController < ApplicationController
-
   def new
     @turnouts = Turnout.new
   end
@@ -20,6 +19,7 @@ class TurnoutsController < ApplicationController
   end
 
   private
+
   def turnout_params
     params.require(:turnout).permit(:attendee_id, :event_id)
   end

@@ -1,13 +1,13 @@
 # Private Events
 
-This is a site similar to  Eventbrite which allows users to create events and then manage user signups. A user can create events. A user can attend many events. An event can be attended by many users. The events are divided into upcoming and past events using scoping and you can easily attend as well as cancel attending it.
+This is a site similar to Eventbrite which allows users to create events and then manage user signups. A user can create events. A user can attend many events. An event can be attended by many users. The events are divided into upcoming and past events using scoping and you can easily attend as well as cancel attending it.
 
 ## To get started
 
-1. Clone this repository on your local machine and `cd` into the members-only directory
+1. Clone this repository on your local machine and `cd` into the private-only directory
 ```
-$ git clone https://github.com/Leon-Mbegera/members-only.git
-$ cd members-only
+$ git clone https://github.com/Leon-Mbegera/private-events
+$ cd private-events
 ```
 2. Install required gem files, excluding gem to run production. 
 `$ bundle install --without production`
@@ -29,11 +29,11 @@ $ heroku run rails db:migrate
 $ heroku run rails db:seed
 ```
 
-- Visiting the URL returned by the original heroku create should now show you the re-former running in production.
+- Visiting the URL returned by the original heroku create should now show you the private-events application running in production.
 
 ## Author
 
 👤 **Leon**
 
-- GitHub: [@githubhandle](https://github.com/Leon-Mbegera)
+- GitHub: [github](https://github.com/Leon-Mbegera)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/leon-mbegera)

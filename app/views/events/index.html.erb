@@ -24,4 +24,6 @@
     <hr>
   <% end %>
 
-<%= link_to "New Events", new_event_path %>
+<% if user_signed_in? %>
+  <%= link_to "Create New Event", new_event_path, class: "btn btn-warning text-dark" %>
+<% end %>

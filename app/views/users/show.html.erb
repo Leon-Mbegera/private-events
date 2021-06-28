@@ -14,9 +14,20 @@
   <% end %>
 </ul>
 
-<h2>Attended Events</h2>
+<h1>Attended Events</h1>
+
+<h2>Previously Attended Events</h2>
  <ol>
-    <% current_user.attended_events.each do |event| %>
+    <% current_user.attended_events.previous.each do |past_event| %>
+    <li>
+      <%= past_event.event_name %>
+    </li> 
+    <% end %>
+ </ol>
+
+ <h2>Upcoming Events</h2>
+ <ol>
+    <% current_user.attended_events.upcoming.each do |upcoming_event| %>
     <li>
       <%= event.event_name %>
     </li> 

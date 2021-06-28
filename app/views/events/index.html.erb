@@ -1,18 +1,15 @@
-<h1>New Events</h1>
-
+<br>
+<h1>All Events</h1>
 
   <% @events.each do |event| %>
-  < class = "d-flex px-2">
-    <p>
-      <%= event.event_name %>
-    </p>
-    <p>
-      <%= event.event_location %>
-    </p>
-    <p>
-      <%= event.event_date %>
-    </p>
-  </ul>
+    <ul>
+      <li>
+          <span> <%= event.event_name %> </span>
+          <span class= "px-4"> <%= event.event_location %> </span>
+          <span class= "px-4"> <%= event.event_date %> </span>
+      </li>
+    </ul>
+    <hr>
   <% end %>
 
 <%= link_to "New Events", new_event_path %>

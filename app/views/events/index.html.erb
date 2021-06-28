@@ -1,7 +1,19 @@
 <br>
 <h1>All Events</h1>
+  <h2>Past Events</h2>
+  <% Event.previous_events.each do |event| %>
+    <ul>
+      <li>
+          <span> <%= event.event_name %> </span>
+          <span class= "px-4"> <%= event.event_location %> </span>
+          <span class= "px-4"> <%= event.event_date %> </span>
+      </li>
+    </ul>
+    <hr>
+  <% end %>
 
-  <% @events.each do |event| %>
+  <h2>Upcoming Events</h2>
+  <% Event.upcoming_events.each do |event| %>
     <ul>
       <li>
           <span> <%= event.event_name %> </span>

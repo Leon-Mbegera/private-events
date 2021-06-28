@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   has_many :attendees, class_name: 'User', through: :turnouts, source: 'attendee'
 
   scope :past_events, Proc.new {where("date < ?", DateTime.now)}
-  
+  scope :upcoming_events, Proc.new {where("date > ?", DateTime.now)}
+
 
 end

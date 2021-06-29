@@ -1,24 +1,21 @@
-<h1>My events</h1>
-
+<h2><%= current_user.email + "'s" + " Events"%> </h2>
 <ul>
-  <% @events.each do |event| %>
+  <% @created_events.each do |created_event| %>
     <li>
-      <%= event.event_name %>
+      <%= created_event.event_name %>
     </li>
     <li>
-      <%= event.event_location %>
+      <%= created_event.event_location %>
     </li>
     <li>
-      <%= event.event_date %>
+      <%= created_event.event_date %>
     </li>
   <% end %>
 </ul>
 
-<h1>Attended Events</h1>
-
 <h2>Previously Attended Events</h2>
  <ol>
-    <% current_user.attended_events.previous.each do |past_event| %>
+    <% @past_events.each do |past_event| %>
     <li>
       <%= past_event.event_name %>
     </li> 
@@ -27,9 +24,9 @@
 
  <h2>Upcoming Events</h2>
  <ol>
-    <% current_user.attended_events.upcoming.each do |upcoming_event| %>
+    <% @upcoming_events.each do |upcoming_event| %>
     <li>
-      <%= event.event_name %>
+      <%= upcoming_event.event_name %>
     </li> 
     <% end %>
  </ol>

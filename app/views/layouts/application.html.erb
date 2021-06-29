@@ -17,6 +17,9 @@
       </div>
       <div>
         <ul class = "list-unstyled d-flex px-5">
+          <% if user_signed_in? %>
+            <%= link_to current_user.email, current_user, class: "nav-item px-3 text-dark fw-bold text-decoration-none" %>
+          <% end %>
           <li><%= link_to "Sign up", new_user_registration_path, class: "nav-item px-3 text-dark fw-bold text-decoration-none"%></li>
           <li><%= link_to "Log in", new_user_session_path, class: "nav-item px-3 text-dark fw-bold text-decoration-none" %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: "delete", class: "nav-item px-3 text-dark fw-bold text-decoration-none" %></li>

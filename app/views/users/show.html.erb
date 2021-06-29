@@ -20,12 +20,14 @@
  </ol>
 <% end %>
 
-<% if @up%>
- <h2>Upcoming Events</h2>
+<% if @upcoming_events.any? %>
+  <h2>Upcoming Events</h2>
  <ol>
     <% @upcoming_events.each do |upcoming_event| %>
-    <li>
+    <li> 
       <%= upcoming_event.event_name %>
     </li> 
     <% end %>
  </ol>
+<% end %>
+ 

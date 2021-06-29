@@ -2,18 +2,15 @@
 <ul>
   <% @created_events.each do |created_event| %>
     <li>
-      <%= created_event.event_name %>
-    </li>
-    <li>
-      <%= created_event.event_location %>
-    </li>
-    <li>
-      <%= created_event.event_date %>
+      <span class="fw-bold"><%= created_event.event_name%></span>
+      <span class="px-4"><%= created_event.event_location%></span>
+      <span class="px-4"><%= created_event.event_date%></span>
     </li>
   <% end %>
 </ul>
 
-<h2>Previously Attended Events</h2>
+<%if @past_events.any? %>
+  <h2>Previously Attended Events</h2>
  <ol>
     <% @past_events.each do |past_event| %>
     <li>
@@ -21,7 +18,9 @@
     </li> 
     <% end %>
  </ol>
+<% end %>
 
+<% if @up%>
  <h2>Upcoming Events</h2>
  <ol>
     <% @upcoming_events.each do |upcoming_event| %>

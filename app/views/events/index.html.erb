@@ -8,6 +8,7 @@
           <span class= "px-4"> <%= past_event.event_location %> </span>
           <span class= "px-4"> <%= past_event.event_date %> </span>
       </li>
+      <%= link_to "Show Event details",event_path(past_event), class: "btn btn-warning text-dark" %>
     </ul>
     <hr>
   <% end %>

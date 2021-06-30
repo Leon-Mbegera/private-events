@@ -7,3 +7,12 @@
 <p> <%= @event.event_date %></p>
 
 <%= link_to 'Attend',turnouts_path(turnout: {event_id:@event.id, attendee_id:current_user.id}), method: :post,class:"btn bg-warning text-dark"%>
+
+<h2>List of Attendees</h2>
+ <ol>
+    <% @event.attendees.each do |attendant| %>
+    <li>
+      <%= attendant.email %>
+    </li> 
+    <% end %>
+ </ol>

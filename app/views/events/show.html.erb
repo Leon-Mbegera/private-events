@@ -6,16 +6,6 @@
 
 <p> <%= @event.event_date %></p>
 
-<%
-=begin%>
- <% if !@event.attendees.include?(current_user.email) %>
-      <%= link_to 'Attend',turnouts_path(turnout: {event_id:@event.id, attendee_id:current_user.id}), method: :post,class:"btn bg-warning text-dark"%>
-<% end %> 
-<%
-=end%>
-
-
-
  <% if attendable?(@event, current_user) %>
   <%= link_to 'Attend',turnouts_path(turnout: {event_id:@event.id, attendee_id:current_user.id}), method: :post,class:"btn bg-warning text-dark"%>
 <% end %> 

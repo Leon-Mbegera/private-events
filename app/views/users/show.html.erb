@@ -15,7 +15,8 @@
     <% @past_events.each do |past_event| %>
     <li>
       <%= past_event.event_name %>
-      <%= link_to "Show Event",event_path(past_event), class: "btn btn-warning text-dark p-0" %>
+      <%= past_event.event_location %>
+      <%= past_event.event_date %>
     </li> 
     <% end %>
  </ol>
@@ -27,7 +28,9 @@
     <% @upcoming_events.each do |upcoming_event| %>
     <li> 
       <%= upcoming_event.event_name %>
-      <%= link_to "Show Event",event_path, class: "btn btn-warning text-dark p-0" %>
+      <%= upcoming_event.event_location %>
+      <%= upcoming_event.event_date %>
+      
     </li> 
     <% end %>
  </ol>

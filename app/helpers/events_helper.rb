@@ -1,6 +1,6 @@
 module EventsHelper
 
   def attendable?(event, user)
-    !!event.attendees.include?(user.email) && event.upcoming
+    !event.attendees.include?(user) && event.isupcoming
   end
 end

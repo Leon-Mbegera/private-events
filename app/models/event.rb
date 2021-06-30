@@ -5,4 +5,8 @@ class Event < ApplicationRecord
 
   scope :past, -> { where('event_date < ?', DateTime.now) }
   scope :upcoming, -> { where('event_date > ?', DateTime.now) }
+
+  def isupcoming
+    Event.upcoming.include?(self)
+  end
 end

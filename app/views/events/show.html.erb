@@ -1,4 +1,4 @@
-<h1>List of Events</h1>
+<h1>Event Details</h1>
 
 <p><%= @event.event_name %></p>
 
@@ -6,9 +6,20 @@
 
 <p> <%= @event.event_date %></p>
 
-<% if attendable?(@event, current_user) %>
-<%= link_to 'Attend',turnouts_path(turnout: {event_id:@event.id, attendee_id:current_user.id}), method: :post,class:"btn bg-warning text-dark"%>
-<%end%>
+<%
+=begin%>
+ <% if !@event.attendees.include?(current_user.email) %>
+      <%= link_to 'Attend',turnouts_path(turnout: {event_id:@event.id, attendee_id:current_user.id}), method: :post,class:"btn bg-warning text-dark"%>
+<% end %> 
+<%
+=end%>
+
+
+
+ <% if attendable?(@event, current_user) %>
+  <%= link_to 'Attend',turnouts_path(turnout: {event_id:@event.id, attendee_id:current_user.id}), method: :post,class:"btn bg-warning text-dark"%>
+<% end %> 
+
 <h2>List of Attendees</h2>
  <ol>
     <% @event.attendees.each do |attendant| %>

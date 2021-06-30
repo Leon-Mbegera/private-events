@@ -8,7 +8,9 @@
           <span class= "px-4"> <%= past_event.event_location %> </span>
           <span class= "px-4"> <%= past_event.event_date %> </span>
       </li>
-      <%= link_to "Show Event details",event_path(past_event), class: "btn btn-warning text-dark" %>
+      <% if user_signed_in? %>
+        <%= link_to "Show Event",event_path(past_event), class: "btn btn-warning text-dark p-0" %>
+      <% end %>
     </ul>
     <hr>
   <% end %>
@@ -21,10 +23,13 @@
           <span class= "px-4"> <%= upcoming_event.event_location %> </span>
           <span class= "px-4"> <%= upcoming_event.event_date %> </span>
       </li>
+      <% if user_signed_in? %>
+        <%= link_to "Show Event",event_path(upcoming_event), class: "btn btn-warning text-dark p-0" %>
+      <% end %>
     </ul>
     <hr>
   <% end %>
 
 <% if user_signed_in? %>
-  <%= link_to "Create New Event", new_event_path, class: "btn btn-warning text-dark" %>
+  <%= link_to "Create New Event", new_event_path, class: "btn btn-warning text-dark p-0" %>
 <% end %>

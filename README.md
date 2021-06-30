@@ -12,11 +12,17 @@ $ cd private-events
 2. Install required gem files, excluding gem to run production. 
 `$ bundle install --without production`
 
-3. Migrate the database with:
+3. Create the database
+`rails db:create`
+
+4. Migrate the database with:
 `$ rails db:migrate`
 
-4. To run the project on local server do: 
+5. To run the project on local server do: 
 `$ rails server`
+
+6. In your browser, go to
+`http://localhost:3000`
 
 ## Deploying
 - To deploy this private events application, you’ll need to create a new Heroku application, switch to the right branch, push up the source, run the migrations, and seed the database with sample users:

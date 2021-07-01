@@ -1,0 +1,40 @@
+<br>
+<h1>Events Page</h1>
+<br>
+  <% if @past_events.any?%>
+    <h2>Past Events</h2>
+  <% @past_events.each do |past_event| %>
+    <ul>
+      <li>
+          <span> <%= past_event.event_name %> </span>
+          <span class= "px-4"> <%= past_event.event_location %> </span>
+          <span class= "px-4"> <%= past_event.event_date %> </span>
+      </li>
+      <% if user_signed_in? %>
+        <%= link_to "Show Event",event_path(past_event), class: "btn btn-warning text-dark p-0" %>
+      <% end %>
+    </ul>
+    <hr>
+  <% end %>
+  <% end %>
+  
+  <% if @upcoming_events.any?%>
+    <h2>Upcoming Events</h2>
+  <% @upcoming_events.each do |upcoming_event| %>
+    <ul>
+      <li>
+          <span> <%= upcoming_event.event_name %> </span>
+          <span class= "px-4"> <%= upcoming_event.event_location %> </span>
+          <span class= "px-4"> <%= upcoming_event.event_date %> </span>
+      </li>
+      <% if user_signed_in? %>
+        <%= link_to "Show Event",event_path(upcoming_event), class: "btn btn-warning text-dark p-0" %>
+      <% end %>
+    </ul>
+    <hr>
+  <% end %>
+  <% end %>
+  
+<% if user_signed_in? %>
+  <%= link_to "Create New Event", new_event_path, class: "btn btn-warning text-dark p-0" %>
+<% end %>

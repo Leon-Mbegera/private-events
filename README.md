@@ -1,24 +1,45 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a site similar to Eventbrite which allows users to create events and then manage user signups. A user can create events. A user can attend many events. An event can be attended by many users. The events are divided into upcoming and past events using scoping and you can easily attend as well as cancel attending it.
 
-Things you may want to cover:
+## To get started
 
-* Ruby version
+1. Clone this repository on your local machine and `cd` into the private-only directory
+```
+$ git clone https://github.com/Leon-Mbegera/private-events
+$ cd private-events
+```
+2. Install required gem files, excluding gem to run production. 
+`$ bundle install --without production`
 
-* System dependencies
+3. Create the database
+`rails db:create`
 
-* Configuration
+4. Migrate the database with:
+`$ rails db:migrate`
 
-* Database creation
+5. To run the project on local server do: 
+`$ rails server`
 
-* Database initialization
+6. In your browser, go to
+`http://localhost:3000`
 
-* How to run the test suite
+## Deploying
+- To deploy this private events application, you’ll need to create a new Heroku application, switch to the right branch, push up the source, run the migrations, and seed the database with sample users:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ heroku create
+$ git checkout updating-users
+$ git push heroku updating-users:master
+$ heroku run rails db:migrate
+$ heroku run rails db:seed
+```
 
-* Deployment instructions
+- Visiting the URL returned by the original heroku create should now show you the private-events application running in production.
 
-* ...
+## Author
+
+👤 **Leon**
+
+- GitHub: [github](https://github.com/Leon-Mbegera)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/leon-mbegera)
